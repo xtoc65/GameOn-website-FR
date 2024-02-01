@@ -200,6 +200,11 @@ input {
   border: 0.8px solid #ccc;
   outline: none;
 }
+.has-error{
+  color: #e54858;
+  display: none;
+}
+
 .text-control {
   margin: 0;
   padding: 8px;
