@@ -61,6 +61,7 @@
               action="index.html"
               method="get"
               onsubmit="return validate();"
+              id="form-id"
             >
               <div
                 class="formData">
@@ -144,7 +145,7 @@
                   id="location3"
                   name="location"
                   value="Seattle"
-                />
+                />           
                 <label class="checkbox-label" for="location3">
                   <span class="checkbox-icon"></span>
                   Seattle</label
@@ -170,7 +171,7 @@
                 <label class="checkbox-label" for="location5">
                   <span class="checkbox-icon"></span>
                   Boston</label
-                >
+                > 
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -182,6 +183,7 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
+                <span class="has-error" id="message-ville">Veulliez choisir une ville</span>
               </div>
 
               <div
@@ -196,11 +198,12 @@
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
+                <span class="has-error" id="message-condition">Vous devez accepté les condition d'utilisation</span>
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
-                  Je Je souhaite être prévenu des prochains évènements.
+                   Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
               </div>
@@ -211,6 +214,12 @@
                 value="C'est parti"
               />
             </form>
+            <div id="valide-id">
+              <div class="content">
+                <span class="close"></span>
+                <p>Merci pour <br /> votre inscription</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
