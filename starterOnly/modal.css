@@ -98,6 +98,7 @@ img {
     float: right;
     display: block;
     margin-top: -15px;
+    color: #FF001B;
   }
 } 
 
@@ -541,6 +542,79 @@ footer {
     margin-top: 50px;
     text-align: center;
   }
+}
+
+@media screen and (max-width: 425px) {
+  main{
+    margin-bottom: 0;
+  }
+  .topnav{
+    margin: 3.5% 3.5% 0;
+  }
+  img{
+    width: 150px;
+  }
+  .hero-content{
+    padding: 5px 0 0 0;
+  }
+  .hero-headline{
+    font-size: 40px;
+  }
+  .hero-text{
+    width: 341px;
+    font-size: 13px;
+    margin-top: 15px;
+  }
+  .hero-img img {
+    margin-top: 20px;
+    height: 310px;
+    object-fit: cover;
+  }
+  .hero-section{
+    margin-top: 0;
+    min-height: auto;
+  }
+  .hero-section > .btn-signup {
+    margin: 20px auto 10px;
+    padding: 10px 20px;
+    width: 141px;
+    height: 33px;
+    font-size: 1rem;
+  }
+  .copyrights {
+    margin: 0;
+    font-size: 15px;
+  }
+  .bground {
+    background-color: unset;
+    top: 30px;
+  }
+  #form-id{
+    font-size: 15px;
+  }
+  .content{
+    padding-top: 0;
+    overflow: unset;
+    margin-top: 0;
+    border-radius: 10px 10px 0 0;
+  }
+  label{
+    font-size: 13px;
+  }
+  .text-control{
+    height: 40px;
+  }
+  .formData{
+    padding: 3.8px 0 0 0;
+  }
+  .checkbox-label{
+    font-size: 11px;
+  }
+  .btn-submit,
+  .btn-signup {
+    border-radius: 10px;
+    padding: 10px 40px;
+  }     
 }
 
 @keyframes modalopen {
