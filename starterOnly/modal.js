@@ -17,6 +17,7 @@ const close = document.querySelector(".close"); //on va cherche la class close q
 const bground = document.querySelector(".bground");//on va cherche la class bground queryselector
 const $formulaire = document.getElementById("form-id");
 const button = document.querySelector(".valider");
+const hasError = document.getElementsByClassName('has-error');//la classe corespond a tout les message d'erreur
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -26,6 +27,9 @@ function launchModal() {
   modalbg.style.display = "block";  
   form.reset();
   $inscriptionOk.style.display = "none";
+  for (i = 0; i < hasError.length; i++) {
+    hasError[i].style.display = 'none';
+  }
 }
 
 //Pour fermer le formulaire avec le bouton fermer 
@@ -80,7 +84,14 @@ const validationFormulaire = () =>{
       $messageEmail.style.display = "block";
       isFormValid = false;
     }
-    if (!anniv.value){
+    const annivOk = (anniv) => {
+      const birthdate = new Date(anniv);
+      const today = new Date();
+      const ageConstraint = 18;
+      const minimumAge = new Date(today.getFullYear() - ageConstraint, today.getMonth(), today.getDate());
+      return birthdate >= minimumAge;
+  }
+    if (!anniv.value(annivOk)){
       $messageAnniv.style.display = "block";
       isFormValid = false;
     }
@@ -97,7 +108,6 @@ const validationFormulaire = () =>{
       $messageCondition.style.display = "block";
       isFormValid = false;
     }
-    const hasError = document.getElementsByClassName('has-error');//la classe corespond a tout les message d'erreur
     if(isFormValid){
         // Parcourez la liste des éléments et masquez-les
         for (i = 0; i < hasError.length; i++) {
