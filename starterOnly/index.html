@@ -14,11 +14,10 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-      <img alt="logo" src="Logo.png" width="auto" height="auto" />
+      <img alt="logo" src="Logo.png"/>
     </div>
     <div class="main-navbar">
-      
-      <a href="#" class="active"><span>Accueil</span></a>
+           
       <a href="#"><span>Détails de l'évènement</span></a>
       <a href="#"><span>À propos</span></a>
       <a href="#"><span>Contact</span></a>
@@ -28,7 +27,6 @@
       </a>
     </div>
     </div>
-  </div>
     <main>
       <div class="hero-section">
         <div class="hero-content">
@@ -45,7 +43,7 @@
           </button>
         </div>
         <div class="hero-img">
-          <img src="./bg_img.jpg" alt="img" />
+          <img src="bg_img.jpg" alt="img" />
         </div>
         <button class="btn-signup modal-btn">
           je m'inscris
@@ -192,9 +190,8 @@
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
-                  checked
                 />
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
@@ -210,15 +207,18 @@
               <input
                 class="btn-submit"
                 type="submit"
-                class="button"
+                id="button"
                 value="C'est parti"
               />
             </form>
             <div id="valide-id">
-              <div class="content">
-                <span class="close"></span>
-                <p>Merci pour <br /> votre inscription</p>
-              </div>
+              <p>Merci pour <br /> votre inscription</p>
+              <input
+                class="btn-submit valider"
+                type="button"
+                id="btn"
+                value="Fermer"
+              />
             </div>
           </div>
         </div>
