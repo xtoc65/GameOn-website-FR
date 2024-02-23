@@ -66,6 +66,7 @@ const validationFormulaire = () =>{
   const $messageNom = document.getElementById("message-nom");
   const $messageEmail = document.getElementById("message-email");
   const $messageAnniv = document.getElementById("message-anniv");
+  const $messageAnniv18 = document.getElementById("message-anniv18");
   const $messagenmbTournoi = document.getElementById("message-nmbtournoi");
   const $messageVille = document.getElementById("message-ville");
   const $messageCondition = document.getElementById("message-condition");
@@ -84,15 +85,22 @@ const validationFormulaire = () =>{
       $messageEmail.style.display = "block";
       isFormValid = false;
     }
-    const annivOk = (anniv) => {
-      const birthdate = new Date(anniv);
-      const today = new Date();
-      const ageConstraint = 18;
-      const minimumAge = new Date(today.getFullYear() - ageConstraint, today.getMonth(), today.getDate());
-      return birthdate >= minimumAge;
-  }
-    if (!anniv.value(annivOk)){
+    //on regarde si l'utilisateur a 18 ans
+    const annivOk = () =>{
+      const aujd =new Date();
+      const annee = aujd.getFullYear();
+      return annee;
+    }
+    const annivValue = new Date(anniv.value);
+    if (annivValue.getFullYear() >= annivOk() - 18) {
+      $messageAnniv18.style.display = "block";
+      $messageAnniv.style.display = "none";
+      isFormValid = false;
+    }
+    //on regarde si le champs est remplie
+    if (!anniv.value){
       $messageAnniv.style.display = "block";
+      $messageAnniv18.style.display = "none";
       isFormValid = false;
     }
     if (nmbTournoi.value==""){
